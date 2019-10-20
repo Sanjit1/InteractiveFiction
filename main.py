@@ -299,7 +299,7 @@ def printSlow(text):
         for l in word:
             sys.stdout.write(l)
             sys.stdout.flush()
-            time.sleep(random.random() * 10.0 / 500)
+            time.sleep(random.random() * 10.0 / 120)
             charLeft = charLeft - 1
         print(' ', end='')
         charLeft = charLeft - 1
