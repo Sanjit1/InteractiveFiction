@@ -34,8 +34,9 @@ def start():
     # Dragon Art end
 
     printSlow("Are you a boi/gal?")
-    if input("").lower() in ["boy", "boi", "dude", "male", "guy"]:
-        a[2] == "Boy"
+    boigal = input("").lower()
+    if boigal in ["boy", "boi", "dude", "male", "guy"]:
+        a[2] = "Boi"
     else:
         a[2] = "Gal"
 
@@ -181,19 +182,19 @@ def findDrag():  # during night dragon kills
         printSlow("You kill the dragon with your magical brain, during the day!")
         if a[1] == 1:
             printSlow("Didn't the troll say something about needing the sword? Well I guess somethimes he can be wrong")
-    winHeckYa()
-
-elif ch == "no" or ch == "n" or ch == "nah" or ch == "never" or ch == "nope" or ch == "wait" or ch == "night" or ch == "not now":
-printSlow("You waited till night time and without the sword, you are helpless against the dragon! And he kills ya")
-if a[1] == 1:
-    printSlow("Looks like the troll was wrong about needing the sword during the day, you needed it at night.")
-die()
-elif ch in winList:
-easterEgg()
-winHeckYa()
-else:
-printSlow("Not So sure what you meant")
-findDrag()
+        winHeckYa()
+    elif ch == "no" or ch == "n" or ch == "nah" or ch == "never" or ch == "nope" or ch == "wait" or ch == "night" or ch == "not now":
+        printSlow(
+            "You waited till night time and without the sword, you are helpless against the dragon! And he kills ya")
+        if a[1] == 1:
+            printSlow("Looks like the troll was wrong about needing the sword during the day, you needed it at night.")
+        die()
+    elif ch in winList:
+        easterEgg()
+        winHeckYa()
+    else:
+        printSlow("Not So sure what you meant")
+        findDrag()
 
 
 def die():
@@ -223,7 +224,7 @@ def die():
     printSlow("Do you want a burial")
     ch = input()
     if ch == "yes" or ch == "y" or ch == "yep" or ch == "yea" or ch == "yeah" or ch == "duh" or ch == "ofc":
-        if a[1] = 0:
+        if a[1] == 0:
             printSlow(
                 "Too bad your in a freaking Island. The dragon burned you too ashes and blew your ashes into the sea. Well I guess that counts")
         else:
@@ -233,7 +234,7 @@ def die():
         easterEgg()
         winHeckYa()
     else:
-        if a[1] = 0:
+        if a[1] == 0:
             printSlow("Well sometimes its good not to demand too much. This time you die with no respect")
         else:
             printSlow("Well the troll is suffocating to death, well all you can do now is watch.")
@@ -278,7 +279,7 @@ def winHeckYa():
     else:
         oppGender = "Boi"
     printSlow(
-        "You reach " + ch + " at 11 pm and find your" + oppGender + ". Well now you get to decide what happens next")
+        "You reach " + ch + " at 11 pm and find your " + oppGender + ". Well now you get to decide what happens next")
 
 
 def easterEgg():
@@ -323,9 +324,15 @@ def printSlowLittle(text):
     print('')
 
 
-a = [0, 1]
+a = [0, 1, "idk"]
 
 winList = ["69", "just kill the dragon", "love", "sanjit", "420", "dragon", "troll", "happy birthday", "infinity",
            "secret", "girls", "guys", "venkatsai", "xxxgamer", "ai", "minecraft", "home", "easter", "hack", "python"]
 
 start()  # Start Program
+print('')
+print('')
+print('')
+print('')
+print('')
+print('.')
