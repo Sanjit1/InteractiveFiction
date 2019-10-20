@@ -33,10 +33,15 @@ def start():
     printSlowLittle("    '   '  `")
     # Dragon Art end
 
+    printSlow("Are you a boi/gal?")
+    if input("").lower() in ["boy", "boi", "dude", "male", "guy"]:
+        a[2] == "Boy"
+    else:
+        a[2] = "Gal"
+
     printSlow(
         "You wake up in bed, not having a clue where you are. A little Troll appears from below the bed, and tries to talk to you. Kill the troll?")
     ch = input("").lower()
-    print(ch)
     if ch == "yes" or ch == "y" or ch == "yup" or ch == "yep" or ch == "yea" or ch == "yeah" or ch == "duh" or ch == "ofc" or ch == "kill":
         printSlow("Congratulations! You killed a Troll!")
         navigateWithoutTroll()
@@ -159,7 +164,7 @@ def hole():
         printSlow("You go in the hole, the dragon finds and kills you.")
         die()
     elif ch == "no" or ch == "n" or ch == "nah" or ch == "never" or ch == "nope":
-        printSlow("Smart Boi/Gal")
+        printSlow("Smart " + a[2])
         findDrag()
     elif ch in winList:
         easterEgg()
@@ -268,7 +273,12 @@ def winHeckYa():
     print("")
     printSlow("Now its time to go home. Where will ya go?")
     ch = input("")
-    printSlow("You reach " + ch + " at 11 pm and find your gal. Well now you get to decide what happens next")
+    if a[2] == "Boi":
+        oppGender = "Gal"
+    else:
+        oppGender = "Boi"
+    printSlow(
+        "You reach " + ch + " at 11 pm and find your" + oppGender + ". Well now you get to decide what happens next")
 
 
 def easterEgg():
